@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; margin-top: 15rem; background-color: rgb(242, 246, 250);">
+    <table border="10">
+        <form action="salvarDados.html">
+            <tr>
+            <td colspan=100% style="text-align: center; color: blueviolet; background-color: black;"> Dados de Cadastro </td>
+            </tr>
+
+            <tr>
+                <td> <label>Nome: </label> </td>
+                <td> <input type="text" name="Nome" id="Nomeid" placeholder="Digite seu Nome de usuário"></td>
+            </tr>
+
+            <tr>
+                <td> <label>E-mail: </label> </td>
+                <td> <input type="text" name="Email" id="Emailid" placeholder="Digite seu E-mail"></td>
+            </tr>
+
+            <tr>
+                <td> <label>Telefone: </label> </td>
+                <td> <input type="number" name="Telefone" id="Telefoneid" placeholder="Digite seu telefone"></td>
+            </tr>
+
+
+            <tr>
+                <td> <label>CEP: </label> </td>
+                <td> <input type="text" name="CEP" id="CEPid" placeholder="Digite seu CEP"></td>
+            </tr>
+
+
+            <tr>
+                <td> <label>Endereço: </label> </td>
+                <td> <textarea type="text" name="Endereco" id="Enderecoid" placeholder="Digite seu endereço"></textarea>
+            </tr>
+
+
+            <tr>
+                <td> <label>CPF: </label> </td>
+                <td> <input type="text" name="CPF" id="CPFid" placeholder="Digite seu CPF"></td>
+            </tr>
+
+            <tr>
+                <td> <button type="button" onclick="fnValidarCampos()" value="Enviar com validação"> Enviar </button> </td>
+            </tr>
+
+        </form>
+    </table>
+
+    <script>
+        const nomeid = document.getElementById('Nomeid')
+        const emailid = document.getElementById('Emailid')
+        const telefoneid = document.getElementById('Telefoneid')
+        const cepid = document.getElementById('CEPid')
+        const enderecoid = document.getElementById('Enderecoid')
+        const cpfid = document.getElementById('CPFid')
+
+        function fnValidarCampos() {
+            nomeidValue = nomeid.value
+            emailidValue = emailid.value
+            telefoneidValue = telefoneid.value
+            cepidValue = cepid.value
+            enderecoidValue = enderecoid.value
+            cpfidValue = cpfid.value
+
+            if(nomeidValue === '' || 0) {
+                alert('Campo nome obrigatório!')
+                return false
+            }
+            
+            if(emailidValue === '' || 0) {
+                alert('Campo email obrigatório!')
+                return false
+            }
+
+            if(telefoneidValue === '' || 0) {
+                alert('Campo telefone obrigatório!')
+                return false
+            } 
+
+            if(cepidValue === '' || 0) {
+                alert('Campo CEP obrigatório!')
+                return false
+            }
+
+            if(enderecoidValue === '' || 0) {
+                alert('Campo endereço obrigatório!')
+                return false
+            }
+
+            if(cpfidValue === '' || 0) {
+                alert('Campo CPF obrigatório!')
+                return false
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
