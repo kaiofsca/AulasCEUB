@@ -8,7 +8,7 @@
 </head>
 <body style="display: flex; justify-content: center; margin-top: 15rem; background-color: rgb(242, 246, 250);">
     <table border="10">
-        <form action="salvarDados.html">
+        <form action="salvar.html">
             <tr>
             <td colspan=100% style="text-align: center; color: blueviolet; background-color: black;"> Dados de Cadastro </td>
             </tr>
@@ -21,7 +21,7 @@
             <tr>
                 <td> <label>Profissão: </label> </td>
                 <td>
-                    <select id="DE_ESPECIALIDADE_SELECIONADA">
+                    <select id="Profid">
                         <option value=""></option>
                         <option value="Professor">Professor</option>
                         <option value="Engenheiro">Engenheiro</option>
@@ -68,6 +68,7 @@
     <script>
         const nomeid = document.getElementById('Nomeid')
         const emailid = document.getElementById('Emailid')
+        const profid = document.getElementById('Profid')
         const telefoneid = document.getElementById('Telefoneid')
         const cepid = document.getElementById('CEPid')
         const enderecoid = document.getElementById('Enderecoid')
@@ -75,6 +76,7 @@
 
         function fnValidarCampos() {
             nomeidValue = nomeid.value
+            profidValue = profid.value
             emailidValue = emailid.value
             telefoneidValue = telefoneid.value
             cepidValue = cepid.value
@@ -88,6 +90,11 @@
             
             if(emailidValue === '' || 0) {
                 alert('Campo email obrigatório!')
+                return false
+            }
+
+            if(profidValue === '' || 0) {
+                alert('Campo profissão obrigatório!')
                 return false
             }
 
@@ -111,9 +118,12 @@
                 return false
             }
 
+            return true
+
         }
 
     </script>
 
 </body>
 </html>
+
