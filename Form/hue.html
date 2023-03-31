@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<style>
+h1 {
+    color: rgba(30, 255, 0, 0.829);
+    font-family: Arial, Helvetica, sans-serif;
+}
+ form {
+    color: blue;
+    font-style: italic;
+}
+
+
+
+</style>
+<body>
+        <h1>Formulário</h1>
+    
+        <form action="Salvar.php">
+            <table border="3">
+                <tr>
+                    <td class="titulogeral" colspan="100%">Dados Cadastrais <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="titulo">Nome:</td>
+                    <td><input type="text" id="Nome" name="nome"></td>
+                </tr>
+
+                <tr>
+                    <td class="titulo">Telefone:</td>
+                     <td><input type="number" id="Telefone" name="telefone" ></td>
+                </tr>
+
+                <tr>   
+                    <td class="titulo">CEP:</td>
+                    <td><input type="text" id="CEP" name="cep"><br></td>
+                </tr>
+
+                 <tr>
+                    <td class="titulo">Endereço:</td>
+                    <td><input type="text"  id="Endereço" name="endereco"></input></td>
+                </tr>
+                <tr>
+                    <td class="titulo">Profissão:</td>
+                    <td class="campos"> <select id="profissão ">
+                        <option value="Professor">Professor </option>
+                        <option value="Médico">Médico </option>
+                        <option value="Engenheiro">Engenheiro</option>
+                    </select>
+                <input type="text" onchange="update(this, profissão)" id="value">
+                    <div id="msprofissao"></div>
+            </td>
+                </tr>
+                <tr>
+                    <td class="titulo">CPF:</td>
+                    <td><input type="text"id="CPF" name="CPF" size=9 maxlength=9></td>
+                </tr>
+                <tr>
+                    <td class="msgemail">E-mail:</td>
+                    <td><input type="text"id="txtgmail" name="Gmail" onblur="validacaoEmail(this)"></td>
+                </tr>
+                <tr>
+                    <td class="titulogeral" colspan="100%">
+                         <input type=submit>
+                        
+                        <input type="button" onclick="fnValidarCampos()" value="Enviar com validação">
+                        </td>
+                    
+                </tr>
+                <div id="msgemail"></div>
+                
+                
+            </table>
+            
+        </form>
+    </body>
+    
+        <script>
+            function fnValidarCampos(){
+                var Nome = document.getElementById("Nome").value
+                var Telefone = document.getElementById("Telefone").value
+                var CEP = document.getElementById("CEP").value
+                var Endereço = document.getElementById("Endereço").value
+                var CPF = document.getElementById("CPF").value
+
+                if (Nome.length < 5) {
+                    alert("Escreva o Nome maior que 5 letras");
+                    return false;
+                }
+                if (Nome == "") {
+                    alert("Escreva o Nome");
+                    return false;
+                }
+                if ( Telefone == "") {
+                    alert("Escreva o Telefone");
+                    return false;
+                }
+                if (CEP == "") {
+                    alert("Escreva o CEP");
+                    return false;
+                }
+                if (Endereço == "") {
+                    alert("Escreva o Endereço");
+                    return false;
+                }
+                if (CPF == "") {
+                    alert("Escreva o CPF");
+                    return false;
+                }
+             return true;
+
+            }
+
+        </script>
+         <script language="Javascript">
+            function validacaoEmail(field) {
+                usuario = field.value.substring(0, field.value.indexOf("@"));
+                dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+                alert(usuario);
+                alert(dominio);
+                if ((usuario.length >= 1) &&
+                    (dominio.length >= 3) &&
+                    (usuario.search("@") == -1) &&
+                    (dominio.search("@") == -1) &&
+                    (usuario.search(" ") == -1) &&
+                    (dominio.search(" ") == -1) &&
+                    (dominio.search(".") != -1) &&
+                    (dominio.indexOf(".") >= 1) &&
+                    (dominio.lastIndexOf(".") < dominio.length - 1)) {
+                    document.getElementById("msgemail").innerHTML = "E-mail válido";
+                    alert("email válido");
+                }
+                else {
+                    document.getElementById("msgemail").innerHTML = "<font color='red'>Email inválido </font>";
+                    alert("E-mail inválido");
+                }
+            }
+        </script>
+        <script>
+            function update(busca,select) {
+                var valorABuscar = busca.values;
+                var buscaid = busca.id;
+                var valorABuscarSemFormatacao = valorABuscar.replace(/(\.|\(|\)|\/|\-|)+/g,'');
+                var valorABuscarFormatado="";
+
+                valorABuscar = valorABuscar.toLowerCase();
+                var selectedTrends = document.getElementById(select);
+                var selectedTrends = document.getElementById(select);
+                selectedTrends.style.display = "none";
+                valorIndex = selectedTrends.selectedIndex;
+                var soprimeiro = true;
+                var soprimeiroSelecionado='0';
+
+                for(var i=1; i < selectedTrends.length; i++)
+                {}
+            }
+
+
+
+        </script>
